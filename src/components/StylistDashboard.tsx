@@ -21,7 +21,7 @@ const STOCK_LOOKBOOKS = [
   { url: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&auto=format&fit=crop&q=80", label: "Korean Soft Waves Perm" },
   { url: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&auto=format&fit=crop&q=80", label: "Modern Ash Balayage" },
   { url: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&auto=format&fit=crop&q=80", label: "Deluxe Copper Underlights" },
-  { url: "https://images.unsplash.com/photo-1591555200577-03577ccb810d?w=600&auto=format&fit=crop&q=80", label: "Intricate Bridal Halo Bun" }
+  { url: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&auto=format&fit=crop&q=80", label: "Intricate Bridal Halo Bun" }
 ];
 
 export default function StylistDashboard({ 
@@ -146,7 +146,7 @@ export default function StylistDashboard({
     const updatedStylistObject: Stylist = {
       id: stylist?.id || "sty_new",
       name: name.trim() || "Elite Stylist",
-      image: stylist?.image || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+      image: stylist?.image || "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=500&auto=format&fit=crop&q=80",
       salonName: salonName.trim() || "Independent Workspace",
       experience: Number(experience),
       rating: stylist?.rating || 5.0,

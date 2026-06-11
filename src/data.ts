@@ -277,7 +277,7 @@ export const STYLISTS: Stylist[] = [
       { id: "rev_9", userName: "Simran K.", rating: 5, comment: "I have had bad curly cuts my whole life until Aisha. She understands texture, patterns, and moisture like nobody else.", date: "2026-05-12" }
     ],
     portfolio: [
-      { id: "p_9", stylistId: "sty_06", stylistName: "Aisha Khan", image: "https://images.unsplash.com/photo-1577441122178-0d32156828b4?w=600&auto=format&fit=crop&q=80", category: "Haircut", title: "Voluminous Rounded Devacut Transformation", description: "Bespoke structural curl positioning with dynamic custom layered texturizing.", tags: ["curly", "haircut"] }
+      { id: "p_9", stylistId: "sty_06", stylistName: "Aisha Khan", image: "https://images.unsplash.com/photo-1611689102033-bc37409c9162?w=600&auto=format&fit=crop&q=80", category: "Haircut", title: "Voluminous Rounded Devacut Transformation", description: "Bespoke structural curl positioning with dynamic custom layered texturizing.", tags: ["curly", "haircut"] }
     ],
     aiAnalysis: {
       matchScore: 95,
