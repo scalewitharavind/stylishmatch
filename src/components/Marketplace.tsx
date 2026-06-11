@@ -11,6 +11,7 @@ interface MarketplaceProps {
   savedStylists: string[];
   onSaveToggle: (id: string) => void;
   initialSearchText?: string;
+  stylists?: Stylist[];
 }
 
 export default function Marketplace({
@@ -19,7 +20,8 @@ export default function Marketplace({
   onBookNow,
   savedStylists,
   onSaveToggle,
-  initialSearchText = ""
+  initialSearchText = "",
+  stylists
 }: MarketplaceProps) {
   
   const [searchText, setSearchText] = useState(initialSearchText);
@@ -56,7 +58,7 @@ export default function Marketplace({
 
   // Core Filtering & Sorting Logic (using useMemo for performance)
   const filteredStylists = useMemo(() => {
-    let list = [...STYLISTS];
+    let list = [...(stylists || STYLISTS)];
 
     // 1. Text Search Match Heuristics
     if (searchText.trim()) {

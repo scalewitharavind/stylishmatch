@@ -20,7 +20,7 @@ export default function AIBeautyConcierge({ setView, onBookNow }: AIBeautyConcie
     {
       id: "m_init",
       sender: "ai",
-      text: "Welcome to StylistMatch AI Concierge. I am your premium beauty and grooming assistant in Bangalore. Tell me your beauty goal, hair texture, or venue location, and I will recommend the absolute perfect stylists for you."
+      text: "Welcome to your StylistMatch Concierge. I am your premium beauty and grooming assistant in Bangalore. Tell me your beauty goal, hair texture, or venue location, and I will recommend the absolute perfect stylists for you."
     }
   ]);
   const [inputText, setInputText] = useState("");
@@ -111,7 +111,7 @@ export default function AIBeautyConcierge({ setView, onBookNow }: AIBeautyConcie
       {/* Header Info */}
       <div className="text-center mb-8 max-w-xl mx-auto">
         <div className="inline-flex items-center px-3 py-1 bg-white border border-[#C5A059]/30 rounded-full text-[10px] font-bold text-[#C5A059] uppercase tracking-widest">
-          Intelligent AI Concierge
+          Intelligent Concierge
         </div>
         <h1 className="mt-3 text-3xl font-extrabold text-black font-sans">
           Your Luxury Beauty Concierge

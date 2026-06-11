@@ -11,6 +11,7 @@ interface HomeViewProps {
   onBookNow: (stylist: Stylist) => void;
   savedStylists: string[];
   onSaveToggle: (id: string) => void;
+  stylists?: Stylist[];
 }
 
 export default function HomeView({
@@ -18,10 +19,12 @@ export default function HomeView({
   onSearchQuerySubmit,
   onBookNow,
   savedStylists,
-  onSaveToggle
+  onSaveToggle,
+  stylists
 }: HomeViewProps) {
   // Take top 4 highly graded stylists as featured
-  const featuredStylists = STYLISTS.slice(0, 4);
+  const list = stylists || STYLISTS;
+  const featuredStylists = list.slice(0, 4);
 
   return (
     <div className="bg-white">
@@ -168,7 +171,7 @@ export default function HomeView({
                 <div className="h-10 w-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600">
                   <Image className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 font-sans font-bold text-emerald-950 text-base">AI Portfolio Search</h3>
+                <h3 className="mt-4 font-sans font-bold text-emerald-950 text-base">Portfolio Search</h3>
                 <p className="mt-2 text-xs text-gray-500 font-sans">
                   Query our visual index by outcome. Type inputs like 'Balayage waves' or 'Korean fringes' to scan real styling image portfolios.
                 </p>
@@ -187,7 +190,7 @@ export default function HomeView({
                 <div className="h-10 w-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600">
                   <Star className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 font-sans font-bold text-emerald-950 text-base">AI Review Insights</h3>
+                <h3 className="mt-4 font-sans font-bold text-emerald-950 text-base">Review Insights</h3>
                 <p className="mt-2 text-xs text-gray-500 font-sans">
                   Consolidated sentiment analysis instantly separates client praise points (consultation depth, attention to detail) from constraints (congestion risk).
                 </p>
@@ -206,7 +209,7 @@ export default function HomeView({
                 <div className="h-10 w-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600">
                   <MessageSquare className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 font-sans font-bold text-emerald-950 text-base">AI Beauty Concierge</h3>
+                <h3 className="mt-4 font-sans font-bold text-emerald-950 text-base">Concierge Guide</h3>
                 <p className="mt-2 text-xs text-gray-500 font-sans">
                   Real-time interactive stylist guide. Consult about your event styling, obtain hair health tips, and receive matching schedules.
                 </p>

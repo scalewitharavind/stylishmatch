@@ -10,6 +10,7 @@ interface UserDashboardProps {
   onSaveToggle: (id: string) => void;
   setView: (view: string, extra?: { stylistId?: string }) => void;
   onBookNow: (stylist: Stylist) => void;
+  stylists?: Stylist[];
 }
 
 export default function UserDashboard({
@@ -19,8 +20,11 @@ export default function UserDashboard({
   onRemoveBooking,
   onSaveToggle,
   setView,
-  onBookNow
+  onBookNow,
+  stylists
 }: UserDashboardProps) {
+
+  const pool = stylists || STYLISTS;
 
   // Past completed bookings seed database
   const pastBookings: Booking[] = [
@@ -51,14 +55,14 @@ export default function UserDashboard({
   ];
 
   // Map saved stylists objects
-  const savedStylists = STYLISTS.filter((s) => savedStylistIds.includes(s.id));
+  const savedStylists = pool.filter((s) => savedStylistIds.includes(s.id));
 
   // Map favorite portfolio designs
-  const allPortfolios = STYLISTS.flatMap((s) => s.portfolio);
+  const allPortfolios = pool.flatMap((s) => s.portfolio);
   const favoritePortfolios = allPortfolios.filter((p) => favoritePortfolioIds.includes(p.id));
 
   // AI Recommendations Engine - dynamically suggest 2 matching Bangalore stylists who align with saved favorites
-  const aiRecommendations = STYLISTS.filter((st) => {
+  const aiRecommendations = pool.filter((st) => {
     // Avoid recommending someone already saved
     if (savedStylistIds.includes(st.id)) return false;
     
@@ -352,7 +356,7 @@ export default function UserDashboard({
               </div>
             ) : (
               <div className="rounded-2xl border border-gray-150 p-6 text-center text-xs text-gray-400">
-                Bookmarks under 'AI Portfolio' gallery will be stored here.
+                Bookmarks under 'Portfolio' gallery will be stored here.
               </div>
             )}
           </section>

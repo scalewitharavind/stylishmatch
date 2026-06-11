@@ -8,6 +8,8 @@ import AIBeautyConcierge from "./components/AIBeautyConcierge";
 import AIPortfolioSearch from "./components/AIPortfolioSearch";
 import BookingFlow from "./components/BookingFlow";
 import UserDashboard from "./components/UserDashboard";
+import AuthView from "./components/AuthView";
+import StylistDashboard from "./components/StylistDashboard";
 import { STYLISTS } from "./data";
 import { Booking, Stylist, Service } from "./types";
 
@@ -18,6 +20,17 @@ export default function App() {
 
   // Search parameter bridging (Hero prompt input triggers AI search filtering)
   const [initialSearchPhrase, setInitialSearchPhrase] = useState("");
+
+  // Authenticated user session state
+  const [currentUser, setCurrentUser] = useState<{
+    name: string;
+    email: string;
+    role: "user" | "stylist";
+    stylistId?: string;
+  } | null>(null);
+
+  // Dynamic Stylists List to support dynamic registrations and profile updates
+  const [stylists, setStylists] = useState<Stylist[]>(STYLISTS);
 
   // Pre-seeded database elements to give the AI Studio judges a fully populated live startup sandbox immediately
   const [savedStylistIds, setSavedStylistIds] = useState<string[]>(["sty_01", "sty_02"]);
@@ -55,7 +68,7 @@ export default function App() {
 
     // Also toggle related first portfolio design as saved lookbook for visual fun
     setFavoritePortfolioIds((prev) => {
-      const stylist = STYLISTS.find(s => s.id === id);
+      const stylist = stylists.find(s => s.id === id);
       if (stylist && stylist.portfolio.length > 0) {
         const portId = stylist.portfolio[0].id;
         if (prev.includes(portId)) {
@@ -66,6 +79,66 @@ export default function App() {
       }
       return prev;
     });
+  };
+
+  // Session Authentication Handlers
+  const handleLoginSuccess = (user: { name: string; email: string; role: "user" | "stylist"; stylistId?: string }) => {
+    setCurrentUser(user);
+    if (user.role === "stylist") {
+      // Ensure stylist exists in dynamic listing
+      const exists = stylists.some(s => s.id === user.stylistId);
+      if (!exists) {
+        const newStylistProfile: Stylist = {
+          id: user.stylistId || `sty_${Date.now()}`,
+          name: user.name,
+          image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=80",
+          salonName: "Elite Independent Salon Suite",
+          experience: 4,
+          rating: 5.0,
+          reviewsCount: 0,
+          specialization: ["Bespoke Styling", "Consultations"],
+          location: "Indiranagar",
+          priceRange: "₹₹ (Premium)",
+          startingPrice: 1500,
+          bio: "Luxury independent beauty artist based in Bangalore.",
+          about: "Independent stylist profile registered with StylistMatch Bangalore. Certified beauty artisan specializing in customized treatments.",
+          certifications: ["Licensed Bangalore Elite Grooming Practitioner", "StylistMatch Verified Artistry Suite"],
+          tags: ["styling", "makeup", "haircut"],
+          services: [
+            { id: `ser_init_${Date.now()}`, name: "Signature Consultation & Sculpt", price: 1500, duration: "45 mins", category: "haircut" }
+          ],
+          reviews: [],
+          portfolio: [],
+          availability: {
+            days: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+            slots: ["10:30 AM", "12:00 PM", "2:00 PM", "3:30 PM", "5:00 PM"]
+          },
+          aiAnalysis: {
+            matchScore: 98,
+            matchExplainer: "Dynamic model matched based on newly registered services profile.",
+            pros: ["Fully customizable pricing", "Bespoke styling"],
+            cons: ["Newly registered profile"]
+          }
+        };
+        setStylists(prev => [newStylistProfile, ...prev]);
+      }
+      setView("dashboard");
+    } else {
+      setView("dashboard"); // Go straight to dashboard on client login
+    }
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    setView("home");
+  };
+
+  const handleUpdateStylist = (updatedStylist: Stylist) => {
+    setStylists(prev => prev.map(s => s.id === updatedStylist.id ? updatedStylist : s));
+  };
+
+  const handleUpdateBookingStatus = (bookingId: string, newStatus: "upcoming" | "completed" | "cancelled") => {
+    setBookings(prev => prev.map(b => b.id === bookingId ? { ...b, status: newStatus } : b));
   };
 
   // Launch the multi-step booking modal
@@ -117,6 +190,7 @@ export default function App() {
             onBookNow={(s) => handleInitiateBooking(s)}
             savedStylists={savedStylistIds}
             onSaveToggle={handleSaveToggle}
+            stylists={stylists}
           />
         );
       case "finder":
@@ -135,6 +209,7 @@ export default function App() {
             savedStylists={savedStylistIds}
             onSaveToggle={handleSaveToggle}
             initialSearchText={initialSearchPhrase}
+            stylists={stylists}
           />
         );
       case "concierge":
@@ -146,7 +221,35 @@ export default function App() {
         );
       case "portfolio-search":
         return <AIPortfolioSearch setView={handleRouteView} />;
+      case "login":
+        return (
+          <AuthView
+            onLoginSuccess={handleLoginSuccess}
+            setView={handleRouteView}
+          />
+        );
       case "dashboard":
+        if (!currentUser) {
+          return (
+            <AuthView
+              onLoginSuccess={handleLoginSuccess}
+              setView={handleRouteView}
+            />
+          );
+        }
+        if (currentUser.role === "stylist") {
+          const stylistObj = stylists.find(s => s.id === currentUser.stylistId) || null;
+          return (
+            <StylistDashboard
+              stylist={stylistObj}
+              onUpdateStylist={handleUpdateStylist}
+              bookings={bookings}
+              onUpdateBookingStatus={handleUpdateBookingStatus}
+              setView={handleRouteView}
+              onLogout={handleLogout}
+            />
+          );
+        }
         return (
           <UserDashboard
             bookings={bookings}
@@ -156,15 +259,16 @@ export default function App() {
             onSaveToggle={handleSaveToggle}
             setView={handleRouteView}
             onBookNow={(s) => handleInitiateBooking(s)}
+            stylists={stylists}
           />
         );
       case "profile":
         if (selectedStylistId) {
-          const stylist = STYLISTS.find((s) => s.id === selectedStylistId);
-          if (stylist) {
+          const stylistObj = stylists.find((s) => s.id === selectedStylistId);
+          if (stylistObj) {
             return (
               <StylistProfileView
-                stylist={stylist}
+                stylist={stylistObj}
                 onBookNow={handleInitiateBooking}
                 savedStylists={savedStylistIds}
                 onSaveToggle={handleSaveToggle}
@@ -179,6 +283,7 @@ export default function App() {
             onBookNow={(s) => handleInitiateBooking(s)}
             savedStylists={savedStylistIds}
             onSaveToggle={handleSaveToggle}
+            stylists={stylists}
           />
         );
       default:
@@ -189,6 +294,7 @@ export default function App() {
             onBookNow={(s) => handleInitiateBooking(s)}
             savedStylists={savedStylistIds}
             onSaveToggle={handleSaveToggle}
+            stylists={stylists}
           />
         );
     }
@@ -201,6 +307,7 @@ export default function App() {
         currentView={currentView} 
         setView={handleRouteView} 
         bookingCount={bookings.filter(b => b.status === 'upcoming').length}
+        currentUser={currentUser}
       />
 
       {/* Main Container */}
