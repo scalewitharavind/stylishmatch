@@ -137,8 +137,13 @@ export default function UserDashboard({
                         </span>
                         <h4 className="font-sans font-extrabold text-base text-gray-900">{booking.stylistName}</h4>
                         <p className="text-xs text-gray-700 font-sans font-medium">{booking.serviceName}</p>
+                        {booking.userEmail && (
+                          <p className="text-[10px] text-gray-400 font-sans">
+                            Receipt Sent To: <span className="font-semibold text-gray-600">{booking.userEmail}</span>
+                          </p>
+                        )}
                         <p className="text-[11px] text-gray-400 flex items-center pt-0.5">
-                          <MapPin className="h-3 w-3 text-amber-600 mr-1 shrink-0" />
+                          <MapPin className="h-3 w-3 text-[#C5A059] mr-1 shrink-0" />
                           <span>{booking.location} Neighborhood</span>
                         </p>
                       </div>
@@ -150,7 +155,9 @@ export default function UserDashboard({
                           <Calendar className="h-3.5 w-3.5 text-amber-500" />
                           <span>{booking.date} @ {booking.timeSlot}</span>
                         </div>
-                        <span className="block text-[11px] text-amber-700 font-extrabold mt-0.5">₹{booking.price} (Pay at Salon)</span>
+                        <span className="block text-[11px] text-amber-700 font-extrabold mt-0.5">
+                          ₹{booking.price} ({booking.paymentMethod || "Pay at Salon"})
+                        </span>
                       </div>
 
                       {onRemoveBooking && (

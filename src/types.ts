@@ -69,6 +69,8 @@ export interface Booking {
   timeSlot: string;
   location: string;
   status: "upcoming" | "completed" | "cancelled";
+  userEmail?: string;
+  paymentMethod?: string;
 }
 
 export interface SearchCriteria {
