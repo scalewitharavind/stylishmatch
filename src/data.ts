@@ -3,26 +3,26 @@ import { Stylist, PortfolioItem } from "./types";
 // Premium Unsplash images representing models, hairstyles, and luxury work
 const IMAGES = {
   stylists: [
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80", // Female 1
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80", // Male 1
-    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=80", // Female 2
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=80", // Male 2
-    "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=80", // Female 3
-    "https://images.unsplash.com/photo-1628157582853-a796fa650a6a?w=500&auto=format&fit=crop&q=80", // Male 3
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80", // Female 4
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=80", // Male 4
-    "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&auto=format&fit=crop&q=80", // Female 5
-    "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&auto=format&fit=crop&q=80", // Male 5
-    "https://images.unsplash.com/photo-1594744803329-e58b31de215f?w=500&auto=format&fit=crop&q=80", // Female 6
-    "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=80", // Male 6
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=80", // Female 7
-    "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=500&auto=format&fit=crop&q=80", // Male 7
-    "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=500&auto=format&fit=crop&q=80", // Female 8
-    "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=500&auto=format&fit=crop&q=80", // Male 8
-    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&auto=format&fit=crop&q=80", // Female 9
-    "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=500&auto=format&fit=crop&q=80", // Male 9
-    "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?w=500&auto=format&fit=crop&q=80", // Female 10
-    "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=500&auto=format&fit=crop&q=80", // Male 10
+    "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=500&auto=format&fit=crop&q=80", // Priya Murthy (Female 1) - Elegant Indian female model
+    "https://images.unsplash.com/photo-1605497746444-ac9dbd43d4a6?w=500&auto=format&fit=crop&q=80", // Rohan Advani (Male 1) - Classic beard & hair grooming
+    "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&auto=format&fit=crop&q=80", // Meera Nair (Female 2) - Royal Indian bridal focus
+    "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=500&auto=format&fit=crop&q=80", // Kabir Sen (Male 2) - Friendly South Asian styling specialist
+    "https://images.unsplash.com/photo-1611689102033-bc37409c9162?w=500&auto=format&fit=crop&q=80", // Aisha Khan (Female 3) - Gorgeous natural curly hair model
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop&q=80", // Jin-Woo Park (Male 3) - Sleek high-fashion hair designer model
+    "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=500&auto=format&fit=crop&q=80", // Ananya Deshmukh (Female 4) - Pure Indian glam makeup portrait
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80", // Vikram Singhania (Male 4) - Sophisticated elite executive look
+    "https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?w=500&auto=format&fit=crop&q=80", // Tina George (Female 5) - Stylish modern portrait
+    "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?w=500&auto=format&fit=crop&q=80", // Suresh Pillai (Male 5) - Smart corporate Indian gentleman profile
+    "https://images.unsplash.com/photo-1574169208507-84376144848b?w=500&auto=format&fit=crop&q=80", // Alia Sengupta (Female 6) - Indian high-fashion editorial hair style
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=80", // Arjun Verma (Male 6) - Polished groomer
+    "https://images.unsplash.com/photo-1618018352910-330999557400?w=500&auto=format&fit=crop&q=80", // Zara Lin (Female 7) - Clean skin aesthetic look
+    "https://images.unsplash.com/photo-1542206395-9feb3edaa68d?w=500&auto=format&fit=crop&q=80", // Mohit Ranade (Male 7) - Traditional Indian groom & beard styling
+    "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&auto=format&fit=crop&q=80", // Kavitha Raj (Female 8) - Graceful premium Bangalore stylist look
+    "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&auto=format&fit=crop&q=80", // Siddharth Sen (Male 8) - Bouncy hair model
+    "https://images.unsplash.com/photo-1610030470224-3407bbade370?w=500&auto=format&fit=crop&q=80", // Natasha DSouza (Female 9) - Luminous beauty profile
+    "https://images.unsplash.com/photo-1628157582853-a796fa650a6a?w=500&auto=format&fit=crop&q=80", // Rishi Kaushik (Male 9) - Modern taper sculpt
+    "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?w=500&auto=format&fit=crop&q=80", // Kylie Sen (Female 10) - Gorgeous feminine layers
+    "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=500&auto=format&fit=crop&q=80", // Ramanathan Iyer (Male 10) - Vintage classic look
   ],
   haircuts: [
     "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&auto=format&fit=crop&q=80",
@@ -35,19 +35,19 @@ const IMAGES = {
     "https://images.unsplash.com/photo-1634449571010-02c1040f5a01?w=600&auto=format&fit=crop&q=80",
   ],
   bridal: [
-    "https://images.unsplash.com/photo-1591555200577-03577ccb810d?w=600&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&auto=format&fit=crop&q=80", // Royal Indian Bride dewy skin glow
+    "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600&auto=format&fit=crop&q=80", // Traditional intricate Indian bridal styling
+    "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&auto=format&fit=crop&q=80", // Indian bridal hair bun braiding art
   ],
   grooming: [
-    "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1605497746444-ac9dbd43d4a6?w=600&auto=format&fit=crop&q=80", // Indian executive beard and haircut
     "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&auto=format&fit=crop&q=80",
     "https://images.unsplash.com/photo-1593702295094-aea22597af65?w=600&auto=format&fit=crop&q=80",
   ],
   makeup: [
-    "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&auto=format&fit=crop&q=80", // Pure Indian glam dewy visual
+    "https://images.unsplash.com/photo-1618018352910-330999557400?w=600&auto=format&fit=crop&q=80", // Clean glass-skin model portrait
+    "https://images.unsplash.com/photo-1615396899839-c99c121888b0?w=600&auto=format&fit=crop&q=80", // South Asian dewy beauty look
   ]
 };
 
@@ -734,7 +734,7 @@ export const STYLISTS: Stylist[] = [
   {
     id: "sty_20",
     name: "Alia Sengupta",
-    image: IMAGES.stylists[2],
+    image: IMAGES.stylists[10],
     salonName: "Bridal Atelier & Co.",
     experience: 12,
     rating: 4.91,
@@ -773,7 +773,7 @@ export const TESTIMONIALS = [
     id: "t_1",
     name: "Malini Goel",
     role: "Tech Entrepreneur, Whitefield",
-    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+    photo: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=150&auto=format&fit=crop&q=80",
     text: "StylistMatch AI is a godsend! I wanted a custom Korean Layered Cut and Balayage. Instead of wasting hours at generic salons, I was matched with Priya. The experience was truly bespoke and feels like a luxury personal concierge.",
     rating: 5,
     stylistName: "Priya Murthy"
@@ -782,7 +782,7 @@ export const TESTIMONIALS = [
     id: "t_2",
     name: "Rishi Rajgopal",
     role: "Managing Partner, JAF Ventures",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    photo: "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=150&auto=format&fit=crop&q=80",
     text: "As a busy venture capitalist, finding a professional who understands geometry and doesn't rush is critical. Rohan Advani's bespoke beard sculpt is outstanding. Booking is seamless and completely stress-free.",
     rating: 5,
     stylistName: "Rohan Advani"
@@ -791,7 +791,7 @@ export const TESTIMONIALS = [
     id: "t_3",
     name: "Sanam Reddy",
     role: "Bride-to-be, Koramangala",
-    photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+    photo: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=150&auto=format&fit=crop&q=80",
     text: "Meera Nair and her assistant did magic for my engagement! Not only did the dewy look match my lehenga color seamlessly, but the AI Review Insights helped me understand exactly what to expect. Worth every star!",
     rating: 5,
     stylistName: "Meera Nair"

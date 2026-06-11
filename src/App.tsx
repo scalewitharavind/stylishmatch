@@ -41,7 +41,7 @@ export default function App() {
       id: "bk_preseed_1",
       stylistId: "sty_01",
       stylistName: "Rohan Advani",
-      stylistAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80",
+      stylistAvatar: "https://images.unsplash.com/photo-1605497746444-ac9dbd43d4a6?w=500&auto=format&fit=crop&q=80",
       serviceName: "Bespoke Sculpt & Haircut Combo",
       price: 3500,
       date: "2026-06-14",
@@ -91,7 +91,7 @@ export default function App() {
         const newStylistProfile: Stylist = {
           id: user.stylistId || `sty_${Date.now()}`,
           name: user.name,
-          image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=80",
+          image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=500&auto=format&fit=crop&q=80",
           salonName: "Elite Independent Salon Suite",
           experience: 4,
           rating: 5.0,
