@@ -10,8 +10,8 @@ export default function AuthView({ onLoginSuccess, setView }: AuthViewProps) {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [role, setRole] = useState<"user" | "stylist">("user");
   const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("scalewitharavind@gmail.com");
-  const [password, setPassword] = useState<string>("••••••••");
+  const [email, setEmail] = useState<string>("name@gmail.com");
+  const [password, setPassword] = useState<string>("password");
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -153,7 +153,7 @@ export default function AuthView({ onLoginSuccess, setView }: AuthViewProps) {
               <input
                 id="auth-email-field"
                 type="email"
-                placeholder="scalewitharavind@gmail.com"
+                placeholder="name@gmail.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full py-2.5 pr-4 text-xs text-black border-0 focus:outline-0 bg-transparent"
@@ -174,7 +174,7 @@ export default function AuthView({ onLoginSuccess, setView }: AuthViewProps) {
               <input
                 id="auth-password-field"
                 type="password"
-                placeholder="Enter account security key"
+                placeholder="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full py-2.5 pr-4 text-xs text-black border-0 focus:outline-0 bg-transparent"

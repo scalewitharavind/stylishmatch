@@ -69,13 +69,16 @@ export default function Marketplace({
           s.name.toLowerCase().includes(q) ||
           s.salonName.toLowerCase().includes(q) ||
           s.location.toLowerCase().includes(q) ||
+          s.bio.toLowerCase().includes(q) ||
+          s.about.toLowerCase().includes(q) ||
           s.specialization.some((spec) => spec.toLowerCase().includes(q)) ||
-          s.tags.some((t) => t.toLowerCase().includes(q))
+          s.tags.some((t) => t.toLowerCase().includes(q)) ||
+          s.services.some((ser) => ser.name.toLowerCase().includes(q))
         );
         if (isDirectMatch) return true;
 
         // Custom word-based smart matching
-        const fillerWords = ["i", "want", "a", "an", "the", "in", "for", "with", "needed", "need", "looking", "style", "styling", "styles", "hairstyle", "hair", "haircuts", "haircut", "artist", "practitioner", "makeover", "makeovers"];
+        const fillerWords = ["i", "want", "a", "an", "the", "in", "for", "with", "needed", "need", "looking", "to", "find", "me", "show", "of"];
         const searchTerms = q.split(/[\s,\-/]+/).filter(w => w.length > 1 && !fillerWords.includes(w));
         
         if (searchTerms.length > 0) {
@@ -83,8 +86,11 @@ export default function Marketplace({
             s.name.toLowerCase().includes(term) ||
             s.salonName.toLowerCase().includes(term) ||
             s.location.toLowerCase().includes(term) ||
+            s.bio.toLowerCase().includes(term) ||
+            s.about.toLowerCase().includes(term) ||
             s.specialization.some((spec) => spec.toLowerCase().includes(term)) ||
-            s.tags.some((t) => t.toLowerCase().includes(term))
+            s.tags.some((t) => t.toLowerCase().includes(term)) ||
+            s.services.some((ser) => ser.name.toLowerCase().includes(term))
           );
         }
         return false;

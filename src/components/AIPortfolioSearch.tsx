@@ -59,7 +59,7 @@ export default function AIPortfolioSearch({ setView }: AIPortfolioSearchProps) {
         );
         if (isDirectMatch) return true;
 
-        const fillerWords = ["i", "want", "a", "an", "the", "in", "for", "with", "needed", "need", "looking", "style", "styling", "styles", "hairstyle", "hair", "haircuts", "haircut", "artist", "practitioner", "makeover", "makeovers"];
+        const fillerWords = ["i", "want", "a", "an", "the", "in", "for", "with", "needed", "need", "looking", "to", "find", "me", "show", "of"];
         const searchTerms = q.split(/[\s,\-/]+/).filter(w => w.length > 1 && !fillerWords.includes(w));
         
         if (searchTerms.length > 0) {
