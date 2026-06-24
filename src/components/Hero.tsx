@@ -52,14 +52,14 @@ export default function Hero({ onFindStylist, onExploreStylists, onSearchQuerySu
             </div>
 
             <h1 className="font-sans font-extrabold tracking-tight text-4xl sm:text-5xl lg:text-6xl text-black leading-[1.1]">
-              Find Bangalore's <span className="text-transparent bg-clip-text bg-gradient-to-r from-black via-[#C5A059] to-black">Perfect</span> Luxury Stylist with AI
+              Find Bangalore's <span className="text-transparent bg-clip-text bg-gradient-to-r from-black via-[#C5A059] to-black">Perfect</span> Luxury Stylist
             </h1>
 
             <p className="font-sans text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl">
-              Your beauty goals, hair type, and occasion analyzed by our AI to match you with top-tier professionals in your neighborhood. Choose handcrafted mastery over generic salons.
+              Your beauty goals, hair type, and occasion carefully matched with top-tier professionals in your neighborhood. Choose handcrafted mastery over generic salons.
             </p>
 
-            {/* AI Search Engine Bar - Interactive design */}
+            {/* Search Engine Bar - Interactive design */}
             <form onSubmit={handleSearchSubmit} className="mt-8 max-w-xl">
               <div className="relative flex items-center rounded-2xl border border-gray-200 bg-white p-2 shadow-xl shadow-gray-100 hover:border-[#C5A059] focus-within:border-[#C5A059] focus-within:ring-2 focus-within:ring-[#C5A059]/20 transition-all duration-300">
                 <div className="flex pl-3 text-gray-400">
@@ -71,7 +71,7 @@ export default function Hero({ onFindStylist, onExploreStylists, onSearchQuerySu
                   onChange={(e) => setTypedQuery(e.target.value)}
                   placeholder={placeholders[placeholderIdx]}
                   className="w-full border-0 bg-transparent px-3 py-3 text-sm text-black outline-none placeholder-gray-400 focus:ring-0"
-                  id="hero-ai-search-input"
+                  id="hero-search-input"
                 />
                 <button
                   type="submit"
@@ -153,10 +153,10 @@ export default function Hero({ onFindStylist, onExploreStylists, onSearchQuerySu
                 </div>
               </div>
 
-              {/* Floating AI Match Badge */}
+              {/* Floating Match Badge */}
               <div className="absolute -top-4 -right-4 rounded-2xl bg-black border border-amber-400 p-4 shadow-xl text-white flex flex-col items-center justify-center animate-bounce">
                 <Sparkles className="h-5 w-5 text-amber-400 mb-1" />
-                <span className="text-[10px] uppercase font-bold text-gray-300 tracking-wider">AI MATCH SCORE</span>
+                <span className="text-[10px] uppercase font-bold text-gray-300 tracking-wider">MATCH SCORE</span>
                 <span className="text-xl font-extrabold font-mono text-amber-400">97%</span>
               </div>
 

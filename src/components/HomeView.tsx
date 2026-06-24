@@ -82,7 +82,7 @@ export default function HomeView({
               The Luxury Stylist Journey
             </h2>
             <p className="mt-3 text-sm text-gray-500 font-sans">
-              Bypass the salon guess-work. StylistMatch AI designs matches customized for your beauty assets.
+              Bypass the salon guess-work. StylistMatch designs matches customized for your beauty assets.
             </p>
           </div>
 
@@ -95,7 +95,7 @@ export default function HomeView({
               },
               {
                 step: "02",
-                title: "AI analyzes your preferences",
+                title: "Smart preference analysis",
                 desc: "Our model screens experiences, verified client sentiment, and portfolio catalogs to find perfect fits."
               },
               {
@@ -128,7 +128,7 @@ export default function HomeView({
               Algorithmic Platform
             </div>
             <h2 className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl font-sans">
-              Proprietary AI Styling Tech
+              Proprietary Styling Tech
             </h2>
             <p className="text-sm text-gray-500 font-sans leading-relaxed">
               We leverage intelligent classification, semantic sentiment analysis, and photographic feature matches to replace salon standardizing with single-person craft.
@@ -152,7 +152,7 @@ export default function HomeView({
                 <div className="h-10 w-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600">
                   <Sparkles className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 font-sans font-bold text-emerald-950 text-base">AI Stylist Match</h3>
+                <h3 className="mt-4 font-sans font-bold text-emerald-950 text-base">Artisan Stylist Match</h3>
                 <p className="mt-2 text-xs text-gray-500 font-sans">
                   Instantly obtain custom specialist suggestions built around straight, curly, wavy hair attributes and corporate or bridal objectives.
                 </p>
@@ -225,7 +225,7 @@ export default function HomeView({
         </div>
       </section>
 
-      {/* 5. WHY STYLISTMATCH AI */}
+      {/* 5. WHY STYLISTMATCH */}
       <section className="bg-neutral-950 text-white py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-12 items-center">
@@ -239,7 +239,7 @@ export default function HomeView({
                 Typical platform directories sell you a salon brand. But hair and skin aren't styled by corporate entities—they are shaped by the individual artist holding the tools.
               </p>
               <p className="text-sm text-gray-400 leading-relaxed font-sans">
-                A famous salon can have freshman apprentices or veteran artistic leads, yet they charge similar pricing tiers. StylistMatch AI shifts the spotlight back to pure craft.
+                A famous salon can have freshman apprentices or veteran artistic leads, yet they charge similar pricing tiers. StylistMatch shifts the spotlight back to pure craft.
               </p>
 
               <div className="space-y-3 pt-4">
@@ -288,7 +288,7 @@ export default function HomeView({
                   <div className="absolute top-0 right-0 h-16 w-16 bg-amber-500/10 rounded-bl-full flex items-center justify-center">
                     <Sparkles className="h-5 w-5 text-amber-400" />
                   </div>
-                  <h3 className="font-sans font-bold text-lg text-amber-400">StylistMatch AI</h3>
+                  <h3 className="font-sans font-bold text-lg text-amber-400">StylistMatch</h3>
                   <div className="space-y-2 text-xs text-neutral-200">
                     <p className="flex items-center space-x-2">
                       <span className="text-amber-400">✓</span>
@@ -375,7 +375,7 @@ export default function HomeView({
                   <div className="w-4 h-4 bg-[#C5A059] rotate-45"></div>
                 </div>
                 <span className="font-sans font-extrabold text-lg tracking-tight uppercase text-black">
-                  StylistMatch <span className="text-[#C5A059]">AI</span>
+                  StylistMatch
                 </span>
               </div>
               <p className="text-xs text-gray-500 leading-relaxed">
@@ -387,7 +387,7 @@ export default function HomeView({
               <h4 className="text-xs font-extrabold uppercase tracking-widest text-black">Platform</h4>
               <ul className="mt-4 space-y-2 text-xs text-gray-500">
                 <li><button onClick={() => setView("marketplace")} className="hover:text-black">Explore Stylists</button></li>
-                <li><button onClick={() => setView("finder")} className="hover:text-black">AI Match Finder</button></li>
+                <li><button onClick={() => setView("finder")} className="hover:text-black">Match Finder</button></li>
                 <li><button onClick={() => setView("concierge")} className="hover:text-black">Beauty Concierge Chat</button></li>
                 <li><button onClick={() => setView("portfolio-search")} className="hover:text-black">Portfolio Outcome Search</button></li>
               </ul>
@@ -411,13 +411,13 @@ export default function HomeView({
                 Bangalore, Karnataka 560038
               </p>
               <p className="mt-2 text-xs text-amber-700 font-semibold">
-                contact@stylistmatch.ai
+                contact@stylistmatch.com
               </p>
             </div>
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between text-xs text-gray-400">
-            <p>© 2026 StylistMatch AI Research. All rights reserved.</p>
+            <p>© 2026 StylistMatch. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <button className="hover:text-black">Terms of Service</button>
               <button className="hover:text-black">Privacy Policy</button>

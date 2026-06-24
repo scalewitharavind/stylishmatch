@@ -14,7 +14,7 @@ export default function Navbar({ currentView, setView, bookingCount, currentUser
   const navItems = [
     { id: "home", label: "Home", icon: Compass },
     { id: "marketplace", label: "Explore Stylists", icon: Award },
-    { id: "finder", label: "AI Match Finder", icon: Sparkles },
+    { id: "finder", label: "Match Finder", icon: Sparkles },
     { id: "concierge", label: "Concierge", icon: MessageSquare },
     { id: "portfolio-search", label: "Portfolio", icon: Image },
   ];
@@ -39,7 +39,7 @@ export default function Navbar({ currentView, setView, bookingCount, currentUser
           </div>
           <div>
             <span className="font-sans font-extrabold text-lg tracking-tight uppercase text-black">
-              StylistMatch <span className="text-[#C5A059]">AI</span>
+              StylistMatch
             </span>
           </div>
         </div>

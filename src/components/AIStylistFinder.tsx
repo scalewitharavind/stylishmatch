@@ -190,7 +190,7 @@ export default function AIStylistFinder({ initialQuery = "", onBookNow, setView 
       {/* Title block */}
       <div className="text-center max-w-3xl mx-auto mb-10">
         <div className="inline-flex items-center px-3 py-1 bg-white border border-[#C5A059]/30 rounded-full text-[10px] font-bold text-[#C5A059] uppercase tracking-widest">
-          Proprietary AI Match Engine
+          Proprietary Match Engine
         </div>
         <h1 className="mt-3.5 font-sans font-extrabold text-3xl text-black">
           Discover Your Perfect Luxury Stylist
@@ -407,7 +407,7 @@ export default function AIStylistFinder({ initialQuery = "", onBookNow, setView 
           {/* Desired Style Textarea */}
           <div className="space-y-4 pt-4">
             <label className="block text-sm font-extrabold uppercase tracking-widest text-black">
-              6. Describe your target style in your own words (AI Prompt)
+              6. Describe your target style in your own words (Style Description)
             </label>
             <div className="relative rounded-2xl border border-gray-200 bg-white p-4 focus-within:border-amber-500 shadow-sm">
               <textarea
@@ -473,7 +473,7 @@ export default function AIStylistFinder({ initialQuery = "", onBookNow, setView 
                   </div>
                   <h3 className="font-sans font-extrabold text-lg sm:text-xl text-white">We Found {results.length} Stylists matched for you</h3>
                   <p className="text-xs text-neutral-400 max-w-xl">
-                    Our AI mapped your preference for <span className="text-amber-400 font-semibold">{criteria.hairType} hair</span> during <span className="text-amber-400 font-semibold">{criteria.occasion}</span> within <span className="text-amber-400 font-semibold">{criteria.preferredArea}</span> starting at <span className="text-amber-400 font-semibold">{criteria.budget}</span>.
+                    Our system mapped your preference for <span className="text-amber-400 font-semibold">{criteria.hairType} hair</span> during <span className="text-amber-400 font-semibold">{criteria.occasion}</span> within <span className="text-amber-400 font-semibold">{criteria.preferredArea}</span> starting at <span className="text-amber-400 font-semibold">{criteria.budget}</span>.
                   </p>
                 </div>
 
@@ -501,7 +501,7 @@ export default function AIStylistFinder({ initialQuery = "", onBookNow, setView 
                       {idx === 0 && (
                         <div className="absolute -top-3.5 left-6 rounded-full bg-amber-500 px-4 py-1 text-[10px] uppercase tracking-widest font-extrabold text-black flex items-center space-x-1">
                           <Star className="h-3 w-3 fill-black text-black" />
-                          <span>AI Rank #1 Master Match</span>
+                          <span>Rank #1 Master Match</span>
                         </div>
                       )}
 
@@ -545,7 +545,7 @@ export default function AIStylistFinder({ initialQuery = "", onBookNow, setView 
 
                           {/* Matching Reason / Explanation Card */}
                           <div className="rounded-2xl bg-amber-50/50 p-4 border border-amber-200/40">
-                            <span className="block text-[10px] uppercase font-bold text-amber-800 tracking-wider">AI RECOMMENDATION INSIGHT</span>
+                            <span className="block text-[10px] uppercase font-bold text-amber-800 tracking-wider">MATCH RECOMMENDATION INSIGHT</span>
                             <p className="text-xs text-gray-700 leading-relaxed italic mt-1">
                               "{result.explainer}"
                             </p>

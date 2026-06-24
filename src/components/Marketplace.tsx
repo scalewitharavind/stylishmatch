@@ -219,7 +219,7 @@ export default function Marketplace({
                 className="rounded-xl border border-gray-250 bg-white px-3 py-2 text-xs font-medium text-gray-800 outline-none focus:border-amber-500 w-full sm:w-44"
                 id="sort-filter-select"
               >
-                <option value="best-match">👑 Best Match (AI Recommended)</option>
+                <option value="best-match">👑 Best Match</option>
                 <option value="highest-rated">⭐ Highest Rated</option>
                 <option value="most-experienced">💼 Most Experienced</option>
                 <option value="trending">🔥 Trending / Active</option>

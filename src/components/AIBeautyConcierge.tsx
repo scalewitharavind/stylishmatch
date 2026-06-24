@@ -117,7 +117,7 @@ export default function AIBeautyConcierge({ setView, onBookNow }: AIBeautyConcie
           Your Luxury Beauty Concierge
         </h1>
         <p className="mt-1.5 text-xs text-gray-500">
-          Obtain custom guidance on beauty transitions, matching timings, or specialist availability. Fully simulated intelligence.
+          Obtain custom guidance on beauty transitions, matching timings, or specialist availability.
         </p>
       </div>
 

@@ -56,7 +56,7 @@ export default function StylistCard({
         <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between">
           <div className="flex items-center space-x-1.5 rounded-full bg-white/95 backdrop-blur-md px-3 py-1.5 text-[10px] font-black text-black border border-[#C5A059]/40 shadow-md">
             <Sparkles className="h-3.5 w-3.5 text-[#C5A059] animate-pulse" />
-            <span className="tracking-tighter">{matchScore}% AI Match</span>
+            <span className="tracking-tighter">{matchScore}% Match</span>
           </div>
 
           {onSaveToggle && (

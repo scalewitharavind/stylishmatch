@@ -293,7 +293,7 @@ export default function UserDashboard({
             </div>
             
             <h3 className="font-sans font-extrabold text-base text-gray-950">
-              Aesthetic AI Discovery Feed
+              Aesthetic Discovery Feed
             </h3>
             <p className="text-xs text-gray-500 leading-relaxed">
               Based on your search filters and booked areas, our matches suggest exploring these nearby craft profiles:

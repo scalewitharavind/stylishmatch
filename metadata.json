@@ -1,6 +1,6 @@
 {
-  "name": "StylistMatch AI",
-  "description": "Bangalore's first AI-powered luxury stylist discovery and booking platform.",
+  "name": "StylistMatch",
+  "description": "Bangalore's first luxury stylist discovery and booking platform.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
