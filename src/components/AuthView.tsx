@@ -10,20 +10,20 @@ export default function AuthView({ onLoginSuccess, setView }: AuthViewProps) {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [role, setRole] = useState<"user" | "stylist">("user");
   const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("name@gmail.com");
-  const [password, setPassword] = useState<string>("password");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
-    if (!email.trim() || (!isLogin && !name.trim())) {
+    if (!isLogin && (!email.trim() || !name.trim())) {
       setError("Please fill in all the required fields.");
       return;
     }
 
-    const trimmedEmail = email.trim();
+    const trimmedEmail = email.trim() || "name@gmail.com";
     const resolvedName = isLogin ? (role === "stylist" ? "Vikram Singhania" : "Aravind S") : name.trim();
 
     onLoginSuccess({
